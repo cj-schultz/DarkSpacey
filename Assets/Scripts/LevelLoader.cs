@@ -25,16 +25,25 @@ public class LevelLoader : MonoBehaviour
     void Start()
     {
         string currentScene = SceneManager.GetActiveScene().name;
-        currentLevel = int.Parse(currentScene.Substring(currentScene.Length - 1));        
+        currentLevel = int.Parse(currentScene.Substring(currentScene.Length - 1));
+        Debug.Log(currentLevel);     
     }
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene("Level" + currentLevel++);
+        if(currentLevel < SceneManager.sceneCountInBuildSettings)
+        {
+            string sceneToLoad = "Level" + ++currentLevel;
+            SceneManager.LoadScene(sceneToLoad);            
+        }                
     }
 
     public void LoadPreviousLevel()
     {
-        SceneManager.LoadScene("Level" + currentLevel--);
+        if (currentLevel > 1)
+        {
+            string sceneToLoad = "Level" + --currentLevel;
+            SceneManager.LoadScene(sceneToLoad);
+        }                
     }
 }

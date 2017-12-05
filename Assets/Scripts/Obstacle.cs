@@ -26,7 +26,7 @@ public class Obstacle : MonoBehaviour
 
     IEnumerator Blink()
     {
-        float blinks = 7;        
+        float blinks = 5;        
         float blinksDone = 0;
 
         float secondsPerBlink = .75f;

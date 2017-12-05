@@ -7,7 +7,7 @@ public class LightSwitch : MonoBehaviour
     public Material disabledMat;
     public MeshRenderer switchMesh;
 
-    private float useBufferTime = 1f;
+    private float useBufferTime = .75f;
     private float lastUseTime;
 
     private GameController gameController;
